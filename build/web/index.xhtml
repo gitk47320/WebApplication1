@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>books</title>
+    </h:head>
+    <h:body>
+       <!--画面を開くと、booksBean内のsekectfrombooks()メソッドが起動し、booksテーブル内のデータを画面に表示する-->
+       <h1>書籍一覧</h1>
+       <h:dataTable value="#{booksBean.selectfrombooks()}" var="b"
+    			styleClass="order-table"
+    			headerClass="order-table-header"
+    			rowClasses="order-table-odd-row,order-table-even-row"
+    		>
+
+    		<h:column>
+    			<f:facet name="header">
+    				ID
+    			</f:facet>
+    				#{b.id}
+    		</h:column>
+
+    		<h:column>
+    			<f:facet name="header">
+    				Name
+				</f:facet>
+    				#{b.name}
+    		</h:column>
+
+ 			<h:column>
+    			<f:facet name="header">
+    				Author
+				</f:facet>
+    				#{b.author}
+    		</h:column>
+
+    	</h:dataTable>
+
+    </h:body>
+</html>
+
