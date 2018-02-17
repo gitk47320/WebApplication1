@@ -36,7 +36,7 @@ public class BooksBean implements Serializable{
       //oracleのライブラリを読み込む
       Class.forName("oracle.jdbc.driver.OracleDriver");
       //oracleのDBに接続する
-      Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@(接続先IPorホスト):1521:(oracle sid)","(ユーザID)","(パスワード)");
+      Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@(接続先IP）:（ポート番号、デフォルトは1521）:（接続識別子）","ユーザ","パスワード");
       //oracleとのセッションを張る
       Statement stmt = conn.createStatement();
       //上記で接続したDBに対して、SQLを実行する。
